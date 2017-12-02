@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">EPharma</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="film_genres">Film genres</string>
+    <string name="website">https://en.wikipedia.org/wiki/Film</string>
+    <string name="date">22 Oct 2015</string>
+    <string name="selected_item">Selected item</string>
+
+    <string-array name="film_genre">
+        <item>Baby Care</item>
+        <item>Beauty Care</item>
+        <item>Body Care</item>
+        <item>Diabetic Care</item>
+        <item>Personal Care</item>
+        <item>Eye and Ear Care</item>
+        <item>Mutivitamins</item>
+        <item>Healthcare Accessories</item>
+        <item>Pharmacy Locator</item>
+        <item>Profile</item>
+        <item>Privacy Policy</item>
+        <item>Health Tips</item>
+        <item>Share this app</item>
+        <item>Feedback</item>
+        <item>contact us</item>
+    </string-array>
+
+    <string-array name="baby_care">
+        <item>Wipes</item>
+        <item>Lotion</item>
+        <item>Powder</item>
+        <item>Milk</item>
+        <item>Food</item>
+        <item>Diapers</item>
+    </string-array>
+
+    <string-array name="beauty_care">
+        <item>Skin Care</item>
+        <item>Hair Care</item>
+    </string-array>
+
+    <string-array name="personal_care">
+        <item>Dental &amp; Oral Care</item>
+        <item>Senitary Napkin</item>
+        <item>Senitary Pad</item>
+        <item>Toilet Tissue</item>
+        <item>Paper Napkin</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_title">movie title</string>
+    <string name="action_movies">Action</string>
+    <string name="musical_movies">Musical</string>
+    <string name="drama_movies">Drama</string>
+    <string name="comedy_movies">Comedy</string>
+    <string name="thriller_movies">Thriller</string>
+    <string name="movie_genre">genre</string>
+</resources>
