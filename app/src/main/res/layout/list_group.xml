@@ -12,7 +12,7 @@
         android:paddingBottom="10dp"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:paddingTop="10dp"
-        android:textColor="@color/color1"
+        android:textColor="@color/color2"
         android:textSize="20dp" />
 
 </LinearLayout>

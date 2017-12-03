@@ -24,6 +24,8 @@
         <item>Share this app</item>
         <item>Feedback</item>
         <item>contact us</item>
+        <item>Login</item>
+        <item>Registration</item>
     </string-array>
 
     <string-array name="baby_care">

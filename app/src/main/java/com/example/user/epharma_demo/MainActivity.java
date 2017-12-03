@@ -112,9 +112,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
                 if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i >= 10) {
+                    if (i == 2)
+                        mNavigationManager.showFragmentBody("Body Care");
                     Toasty.error(getApplicationContext(), "Zero Child no fragment created", Toast.LENGTH_SHORT, true).show();
-
+                    mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
+
                 //Toasty.error(getApplicationContext(),""+i, Toast.LENGTH_SHORT, true).show();
                 return false;
             }

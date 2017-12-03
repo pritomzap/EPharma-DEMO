@@ -1,5 +1,6 @@
 package com.example.user.epharma_demo.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -77,6 +78,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         return listPosition;
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public View getGroupView(int listPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
@@ -87,8 +89,14 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         TextView listTitleTextView = (TextView) convertView
                 .findViewById(R.id.listTitle);
 
+
         listTitleTextView.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "fonts/font2.otf"));
         listTitleTextView.setText(listTitle);
+        if (listTitle.equals("Login")) {
+            listTitleTextView.setBackgroundColor(R.color.color3);
+        } else if (listTitle.equals("Registration")) {
+            listTitleTextView.setBackgroundColor(R.color.color3);
+        }
         return convertView;
     }
 

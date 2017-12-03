@@ -10,17 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by msahakyan on 22/10/15.
- */
+
 public class ExpandableListDataSource {
 
-    /**
-     * Returns fake data of films
-     *
-     * @param context
-     * @return
-     */
+
     public static Map<String, List<String>> getData(Context context) {
         Map<String, List<String>> expandableListData = new TreeMap<>();
 
@@ -48,6 +41,8 @@ public class ExpandableListDataSource {
         expandableListData.put(filmGenres.get(12), singleValue);
         expandableListData.put(filmGenres.get(13), singleValue);
         expandableListData.put(filmGenres.get(14), singleValue);
+        expandableListData.put(filmGenres.get(15), singleValue);
+        expandableListData.put(filmGenres.get(16), singleValue);
 
 
         return expandableListData;

@@ -13,9 +13,7 @@ import com.example.user.epharma_demo.fragment.FragmentBeautyCare;
 import com.example.user.epharma_demo.fragment.FragmentBodyCare;
 import com.example.user.epharma_demo.fragment.FragmentDIabeticCare;
 
-/**
- * @author msahakyan
- */
+
 
 public class FragmentNavigationManager implements NavigationManager {
 
@@ -112,6 +110,16 @@ public class FragmentNavigationManager implements NavigationManager {
 
     @Override
     public void showFragmentContactUs(String title) {
+
+    }
+
+    @Override
+    public void showFragmentLogin(String title) {
+
+    }
+
+    @Override
+    public void showFragmentRegistration(String title) {
 
     }
 

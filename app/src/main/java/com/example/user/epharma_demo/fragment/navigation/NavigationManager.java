@@ -1,8 +1,6 @@
 package com.example.user.epharma_demo.fragment.navigation;
 
-/**
- * @author msahakyan
- */
+
 
 public interface NavigationManager {
 
@@ -35,4 +33,8 @@ public interface NavigationManager {
     void showFragmentFeedback(String title);
 
     void showFragmentContactUs(String title);
+
+    void showFragmentLogin(String title);
+
+    void showFragmentRegistration(String title);
 }
