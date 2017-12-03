@@ -2,11 +2,15 @@ package com.example.user.epharma_demo.fragment;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.example.user.epharma_demo.R;
@@ -23,6 +27,7 @@ public class FragmentBodyCare extends Fragment {
     private String mParam2;
     private String submenu;
     private TextView tv;
+    private WebView webView;
     //private OnFragmentInteractionListener mListener;
 
     public FragmentBodyCare() {
@@ -69,6 +74,20 @@ public class FragmentBodyCare extends Fragment {
         tv = (TextView) v.findViewById(R.id.textview1);
         tv.setText("You Have Selected " + submenu);
         tv.setTextColor(Color.BLUE);
+        String url = "https://ratul794.cdipuiu.com/projects/project_1/project/products";
+        webView = (WebView) v.findViewById(R.id.webview);
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed(); // Ignore SSL certificate errors
+                //L.d("SSL Error received");
+
+            }
+        });
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setAppCacheEnabled(true);
+        webView.loadUrl(url);
         // Inflate the layout for this fragment
         return v;
     }
