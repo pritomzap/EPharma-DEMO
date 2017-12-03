@@ -94,7 +94,8 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         listTitleTextView.setText(listTitle);
         if (listTitle.equals("Login")) {
             listTitleTextView.setBackgroundColor(R.color.color3);
-        } else if (listTitle.equals("Registration")) {
+        }
+        if (listTitle.equals("Registration")) {
             listTitleTextView.setBackgroundColor(R.color.color3);
         }
         return convertView;

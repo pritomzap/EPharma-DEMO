@@ -34,7 +34,7 @@ public interface NavigationManager {
 
     void showFragmentContactUs(String title);
 
-    void showFragmentLogin(String title);
+    void showFragmentLogin();
 
-    void showFragmentRegistration(String title);
+    void showFragmentRegistration();
 }

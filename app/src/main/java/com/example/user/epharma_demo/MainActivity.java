@@ -111,10 +111,15 @@ public class MainActivity extends AppCompatActivity {
         mExpandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
-                if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i >= 10) {
+                if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i > 10) {
                     if (i == 2)
                         mNavigationManager.showFragmentBody("Body Care");
-                    Toasty.error(getApplicationContext(), "Zero Child no fragment created", Toast.LENGTH_SHORT, true).show();
+                    else if (i == 8)
+                        mNavigationManager.showFragmentLogin();
+                    else if (i == 14)
+                        mNavigationManager.showFragmentRegistration();
+                    else
+                        Toasty.error(getApplicationContext(), "Zero Child no fragment created" + i, Toast.LENGTH_SHORT, true).show();
                     mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
 
