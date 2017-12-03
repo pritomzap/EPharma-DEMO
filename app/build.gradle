@@ -28,4 +28,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.airbnb.android:lottie:2.3.0'
     compile 'com.github.GrenderG:Toasty:1.2.5'
+    compile 'com.ss.bannerslider:bannerslider:1.8.0'
 }

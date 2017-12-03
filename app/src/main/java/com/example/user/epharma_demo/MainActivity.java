@@ -1,6 +1,7 @@
 package com.example.user.epharma_demo;
 
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.epharma_demo.adapter.CustomExpandableListAdapter;
@@ -87,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
+        TextView tv = (TextView) findViewById(R.id.email);
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/font2.otf");
+        tv.setTypeface(tf);
         mExpandableListAdapter = new CustomExpandableListAdapter(this, mExpandableListTitle, mExpandableListData);
         mExpandableListView.setAdapter(mExpandableListAdapter);
         mExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
@@ -106,10 +111,11 @@ public class MainActivity extends AppCompatActivity {
         mExpandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
-                if (i == 2 || i == 3 || i >= 5) {
+                if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i >= 10) {
                     Toasty.error(getApplicationContext(), "Zero Child no fragment created", Toast.LENGTH_SHORT, true).show();
 
                 }
+                //Toasty.error(getApplicationContext(),""+i, Toast.LENGTH_SHORT, true).show();
                 return false;
             }
         });
