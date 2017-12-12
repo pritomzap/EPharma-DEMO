@@ -78,9 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectFirstItemAsDefault() {
         if (mNavigationManager != null) {
-            String firstActionMovie = getResources().getStringArray(R.array.baby_care)[0];
-            mNavigationManager.showFragmentBaby(firstActionMovie);
-            getSupportActionBar().setTitle(firstActionMovie);
+//            String firstActionMovie = getResources().getStringArray(R.array.baby_care)[0];
+//            mNavigationManager.showFragmentBaby(firstActionMovie);
+//            getSupportActionBar().setTitle(firstActionMovie);
+            mNavigationManager.showFragmentContent();
+
         }
     }
 

@@ -37,4 +37,6 @@ public interface NavigationManager {
     void showFragmentLogin();
 
     void showFragmentRegistration();
+
+    void showFragmentContent();
 }

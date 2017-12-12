@@ -14,6 +14,7 @@ import com.example.user.epharma_demo.fragment.FragmentBodyCare;
 import com.example.user.epharma_demo.fragment.FragmentDIabeticCare;
 import com.example.user.epharma_demo.fragment.FragmentLogin;
 import com.example.user.epharma_demo.fragment.FragmentRegistration;
+import com.example.user.epharma_demo.fragment.Fragment_content;
 
 
 public class FragmentNavigationManager implements NavigationManager {
@@ -123,6 +124,11 @@ public class FragmentNavigationManager implements NavigationManager {
     @Override
     public void showFragmentRegistration() {
         showFragment(new FragmentRegistration(), false);
+    }
+
+    @Override
+    public void showFragmentContent() {
+        showFragment(new Fragment_content(), false);
     }
 
     private void showFragment(Fragment fragment, boolean allowStateLoss) {

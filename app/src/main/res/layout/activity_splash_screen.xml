@@ -7,24 +7,18 @@
     android:orientation="vertical"
     tools:context="com.example.user.epharma_demo.SplashScreen">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="E-pharma"
-        android:textAllCaps="true"
-        android:textColor="@color/color1"
-        android:textSize="40sp" />
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="Lottie/pen_tool_loop.json"
-        app:lottie_loop="true" />
+        app:lottie_fileName="Lottie/json1.json"
+        app:lottie_imageAssetsFolder="Lottie/images"
+        app:lottie_loop="true"
+        app:lottie_scale="0.4" />
 
 </LinearLayout>
