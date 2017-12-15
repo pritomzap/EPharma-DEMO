@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private ExpandableListAdapter mExpandableListAdapter;
     private List<String> mExpandableListTitle;
     private NavigationManager mNavigationManager;
-
     private Map<String, List<String>> mExpandableListData;
 
     @Override
@@ -116,12 +115,12 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i > 10) {
                     if (i == 2)
                         mNavigationManager.showFragmentBody("Body Care");
-                    else if (i == 8)
-                        mNavigationManager.showFragmentLogin();
+                    else if (i == 12)
+                        mNavigationManager.showFragmentProfile();
                     else if (i == 14)
                         mNavigationManager.showFragmentRegistration();
                     else
-                        Toasty.error(getApplicationContext(), "Zero Child no fragment created" + i, Toast.LENGTH_SHORT, true).show();
+                        Toasty.error(getApplicationContext(), "Zero Child no fragment created " + i, Toast.LENGTH_SHORT, true).show();
                     mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
 

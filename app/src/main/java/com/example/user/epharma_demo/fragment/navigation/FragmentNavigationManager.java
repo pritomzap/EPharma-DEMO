@@ -7,12 +7,14 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.example.user.epharma_demo.BuildConfig;
 import com.example.user.epharma_demo.MainActivity;
+import com.example.user.epharma_demo.Others.SharedPref;
 import com.example.user.epharma_demo.R;
 import com.example.user.epharma_demo.fragment.FragmentBabyCare;
 import com.example.user.epharma_demo.fragment.FragmentBeautyCare;
 import com.example.user.epharma_demo.fragment.FragmentBodyCare;
 import com.example.user.epharma_demo.fragment.FragmentDIabeticCare;
 import com.example.user.epharma_demo.fragment.FragmentLogin;
+import com.example.user.epharma_demo.fragment.FragmentProfile;
 import com.example.user.epharma_demo.fragment.FragmentRegistration;
 import com.example.user.epharma_demo.fragment.Fragment_content;
 
@@ -42,6 +44,13 @@ public class FragmentNavigationManager implements NavigationManager {
         //showFragment(FragmentACtion.newInstance(title), false);
         showFragment(new FragmentBabyCare(title), false);
 
+    }
+
+
+    public String sessionHandle() {
+        SharedPref sharedPref = new SharedPref(mActivity.getApplicationContext());
+        String session = sharedPref.getSess();
+        return session;
     }
 
     @Override
@@ -85,10 +94,6 @@ public class FragmentNavigationManager implements NavigationManager {
 
     }
 
-    @Override
-    public void showFragmentProfile(String title) {
-
-    }
 
     @Override
     public void showFragmentPrivacyPolicy(String title) {
@@ -129,6 +134,14 @@ public class FragmentNavigationManager implements NavigationManager {
     @Override
     public void showFragmentContent() {
         showFragment(new Fragment_content(), false);
+    }
+
+    @Override
+    public void showFragmentProfile() {
+        if (sessionHandle().equals("0"))
+            showFragment(new FragmentLogin(), false);
+        else
+            showFragment(new FragmentProfile(), false);
     }
 
     private void showFragment(Fragment fragment, boolean allowStateLoss) {

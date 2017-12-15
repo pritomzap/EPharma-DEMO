@@ -10,7 +10,13 @@ public class Model {
 
     @SerializedName("message")
     public String message;
+    @SerializedName("user_id")
+    public String userID;
     boolean success;
+
+    public String getUserID() {
+        return userID;
+    }
 
     public boolean isSuccess() {
         return success;

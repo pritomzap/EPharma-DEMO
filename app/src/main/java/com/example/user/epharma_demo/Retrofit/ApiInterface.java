@@ -14,11 +14,12 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @GET("image_upload.php")
-    Call<Model> uploadImage(@Query("image") String image,
-                            @Query("title") String title);
 
     @Multipart
     @POST("upload_image.php")
     Call<Model> uploadFile(@Part MultipartBody.Part file);
+
+    @GET("user_login.php")
+    Call<Model> userLoginSystem(@Query("email") String email,
+                                @Query("password") String password);
 }

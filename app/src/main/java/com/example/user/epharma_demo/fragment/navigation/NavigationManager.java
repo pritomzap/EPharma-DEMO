@@ -22,7 +22,7 @@ public interface NavigationManager {
 
     void showFragmentPharmacyLocator(String title);
 
-    void showFragmentProfile(String title);
+    void showFragmentProfile();
 
     void showFragmentPrivacyPolicy(String title);
 
@@ -39,4 +39,6 @@ public interface NavigationManager {
     void showFragmentRegistration();
 
     void showFragmentContent();
+
+    //void showFragmentProfile(String session);
 }

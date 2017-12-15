@@ -7,8 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.user.epharma_demo.Others.SharedPref;
 import com.example.user.epharma_demo.R;
+
+import java.util.ArrayList;
+
+import es.dmoral.toasty.Toasty;
 
 
 public class FragmentBabyCare extends Fragment {
@@ -67,6 +73,9 @@ public class FragmentBabyCare extends Fragment {
         tv = (TextView) v.findViewById(R.id.textview1);
         tv.setText("You Have Selected " + submenu);
         // Inflate the layout for this fragment
+        SharedPref sharedPref = new SharedPref(v.getContext());
+        ArrayList<String> info = sharedPref.retriveData();
+        Toasty.success(v.getContext(), info.toString(), Toast.LENGTH_LONG, false).show();
         return v;
     }
 

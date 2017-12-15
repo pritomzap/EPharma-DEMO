@@ -1,18 +1,19 @@
 package com.example.user.epharma_demo.fragment;
 
-import android.annotation.SuppressLint;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
+import com.example.user.epharma_demo.MainActivity;
+import com.example.user.epharma_demo.Others.SharedPref;
 import com.example.user.epharma_demo.R;
 
 
-public class FragmentDIabeticCare extends Fragment {
+public class FragmentProfile extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -21,17 +22,11 @@ public class FragmentDIabeticCare extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private String submenu;
-    private TextView tv;
-    //private OnFragmentInteractionListener mListener;
+    private Button logout;
 
-    public FragmentDIabeticCare() {
+
+    public FragmentProfile() {
         // Required empty public constructor
-    }
-
-    @SuppressLint("ValidFragment")
-    public FragmentDIabeticCare(String submenu) {
-        this.submenu = submenu;
     }
 
     /**
@@ -40,11 +35,11 @@ public class FragmentDIabeticCare extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentDIabeticCare.
+     * @return A new instance of fragment FragmentProfile.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentDIabeticCare newInstance(String param1, String param2) {
-        FragmentDIabeticCare fragment = new FragmentDIabeticCare();
+    public static FragmentProfile newInstance(String param1, String param2) {
+        FragmentProfile fragment = new FragmentProfile();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,13 +59,20 @@ public class FragmentDIabeticCare extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_diabetic, container, false);
-        tv = (TextView) v.findViewById(R.id.textview1);
-        tv.setText("You Have Selected " + submenu);
-        tv.setTextColor(Color.MAGENTA);
         // Inflate the layout for this fragment
-
+        final View v = inflater.inflate(R.layout.fragment_profile, container, false);
+        logout = (Button) v.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                SharedPref sharedPref = new SharedPref(v.getContext());
+                sharedPref.saveInfo("", "", "0");
+                startActivity(intent);
+            }
+        });
         return v;
     }
+
 
 }

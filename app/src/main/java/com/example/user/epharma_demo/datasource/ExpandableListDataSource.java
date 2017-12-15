@@ -13,8 +13,9 @@ import java.util.TreeMap;
 
 public class ExpandableListDataSource {
 
-
     public static Map<String, List<String>> getData(Context context) {
+
+
         Map<String, List<String>> expandableListData = new TreeMap<>();
 
         List<String> filmGenres = Arrays.asList(context.getResources().getStringArray(R.array.film_genre));
