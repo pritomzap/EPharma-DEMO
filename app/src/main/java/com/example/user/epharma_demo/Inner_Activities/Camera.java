@@ -182,7 +182,6 @@ public class Camera extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(1000, 900);
     }
 
 
