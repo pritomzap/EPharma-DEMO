@@ -1,7 +1,6 @@
 package com.example.user.epharma_demo.fragment;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -73,8 +72,8 @@ public class FragmentBodyCare extends Fragment {
         View v = inflater.inflate(R.layout.fragment_body_care, container, false);
         tv = (TextView) v.findViewById(R.id.textview1);
         tv.setText("You Have Selected " + submenu);
-        tv.setTextColor(Color.BLUE);
-        String url = "https://ratul794.cdipuiu.com/projects/project_1/project/products";
+        //tv.setTextColor(Color.BLUE);
+        String url = "http://kipailam.com/susam/epharma/project/products";
         webView = (WebView) v.findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient() {
             @Override

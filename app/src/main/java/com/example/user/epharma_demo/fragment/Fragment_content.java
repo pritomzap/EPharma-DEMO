@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.user.epharma_demo.Inner_Activities.Camera;
+import com.example.user.epharma_demo.Inner_Activities.Emergency;
+import com.example.user.epharma_demo.Inner_Activities.Order_History;
+import com.example.user.epharma_demo.Inner_Activities.Request_Product;
 import com.example.user.epharma_demo.R;
 import com.example.user.epharma_demo.Retrofit.ApiClient;
 import com.example.user.epharma_demo.Retrofit.ApiInterface;
@@ -48,7 +51,7 @@ public class Fragment_content extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ImageButton imageButton2, imageButton5;
+    private ImageButton imageButton2, imageButton5, imageButton6, imageButton3, imageButton4, imageButton7;
     public Fragment_content() {
         // Required empty public constructor
     }
@@ -87,6 +90,10 @@ public class Fragment_content extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_content, container, false);
         imageButton2 = (ImageButton) v.findViewById(R.id.imageButton2);
         imageButton5 = (ImageButton) v.findViewById(R.id.imageButton5);
+        imageButton6 = (ImageButton) v.findViewById(R.id.imageButton6);
+        imageButton3 = (ImageButton) v.findViewById(R.id.imageButton3);
+        imageButton4 = (ImageButton) v.findViewById(R.id.imageButton4);
+        imageButton7 = (ImageButton) v.findViewById(R.id.imageButton7);
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +112,39 @@ public class Fragment_content extends Fragment {
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
         });
+        imageButton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(v.getContext(), Order_History.class);
+                startActivity(intent);
+            }
+        });
+
+        imageButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(v.getContext(), Emergency.class);
+                startActivity(intent);
+            }
+        });
+        imageButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String number = "01824297068";
+                Uri call = Uri.parse("tel:" + number);
+                Intent surf = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(surf);
+            }
+        });
+
+        imageButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(v.getContext(), Request_Product.class);
+                startActivity(intent);
+            }
+        });
+
         v2 = v;
         return v;
     }

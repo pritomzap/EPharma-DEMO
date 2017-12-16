@@ -1,7 +1,10 @@
 package com.example.user.epharma_demo.Retrofit;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,7 +20,12 @@ public class APICall {
     public String message;
     public View v;
 
+    public Context c;
     public String userid;
+
+    public APICall(Context c) {
+        this.c = c;
+    }
 
     public APICall(View view) {
         this.v = v;
@@ -44,6 +52,24 @@ public class APICall {
         });
         return userid;
 
+    }
+
+    public void userRegister(String username, String email, String password) {
+
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        call = apiInterface.userRegistration(username, email, password);
+        call.enqueue(new Callback<Model>() {
+            @Override
+            public void onResponse(Call<Model> call, Response<Model> response) {
+                String result = response.body().getMessage();
+                Toasty.success(c, result, Toast.LENGTH_LONG, true).show();
+            }
+
+            @Override
+            public void onFailure(Call<Model> call, Throwable t) {
+
+            }
+        });
     }
 
 

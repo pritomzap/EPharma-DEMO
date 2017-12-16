@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
     tools:context="com.example.user.epharma_demo.SplashScreen">
 
@@ -16,8 +17,7 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="Lottie/json1.json"
-        app:lottie_imageAssetsFolder="Lottie/images"
+        app:lottie_fileName="Lottie/phonological.json"
         app:lottie_loop="true"
         app:lottie_scale="0.4" />
 

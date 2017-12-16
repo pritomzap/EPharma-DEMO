@@ -112,13 +112,26 @@ public class MainActivity extends AppCompatActivity {
         mExpandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
-                if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i > 10) {
+                if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i > 10) {
                     if (i == 2)
                         mNavigationManager.showFragmentBody("Body Care");
                     else if (i == 12)
                         mNavigationManager.showFragmentProfile();
                     else if (i == 14)
                         mNavigationManager.showFragmentRegistration();
+                    else if (i == 13)
+                        mNavigationManager.showFragmentRegistration();
+                    else if (i == 3)
+                        mNavigationManager.showFragmentBody("Diabetic Care");//
+
+                    else if (i == 4)
+                        mNavigationManager.showFragmentBody("Eye and Ear Care");
+                    else if (i == 7)
+                        mNavigationManager.showFragmentBody("Healthcare Accessories");
+                    else if (i == 8)
+                        mNavigationManager.showFragmentBody("Mutivitamins");
+
+
                     else
                         Toasty.error(getApplicationContext(), "Zero Child no fragment created " + i, Toast.LENGTH_SHORT, true).show();
                     mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -140,11 +153,16 @@ public class MainActivity extends AppCompatActivity {
                     getSupportActionBar().setTitle(selectedItem);
 
                     if (items[0].equals(mExpandableListTitle.get(groupPosition))) {
-                        mNavigationManager.showFragmentBaby(selectedItem);
+                        //mNavigationManager.showFragmentBaby(selectedItem);
+                        mNavigationManager.showFragmentBody(selectedItem);//baby care
                     } else if (items[1].equals(mExpandableListTitle.get(groupPosition))) {
-                        mNavigationManager.showFragmentBeauty(selectedItem);
+                        //mNavigationManager.showFragmentBeauty(selectedItem);
+                        mNavigationManager.showFragmentBody(selectedItem);
                     } else if (items[4].equals(mExpandableListTitle.get(groupPosition))) {
-                        mNavigationManager.showFragmentPersonal(selectedItem);
+                        //mNavigationManager.showFragmentPersonal(selectedItem);
+                        mNavigationManager.showFragmentBody(selectedItem);
+                    } else if (items[9].equals(mExpandableListTitle.get(groupPosition))) {
+                        mNavigationManager.showFragmentBody(selectedItem);
                     } else {
                         throw new IllegalArgumentException("Not supported fragment type");
                     }

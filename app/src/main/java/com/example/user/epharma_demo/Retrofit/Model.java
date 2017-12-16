@@ -12,7 +12,25 @@ public class Model {
     public String message;
     @SerializedName("user_id")
     public String userID;
+    @SerializedName("username")
+    public String username;
+    @SerializedName("email")
+    public String email;
+    @SerializedName("password")
+    public String password;
     boolean success;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public String getUserID() {
         return userID;

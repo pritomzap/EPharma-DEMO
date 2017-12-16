@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.example.user.epharma_demo.Inner_Activities.Emergency">
+
+    <Button
+        android:id="@+id/emg_hsptl_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:drawableRight="@drawable/ic_action_next"
+        android:includeFontPadding="true"
+        android:onClick="ShowPopup"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hospital Infomation"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/emg_ablnc_srvc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:drawableRight="@drawable/ic_action_next"
+        android:includeFontPadding="true"
+        android:onClick="ShowPopup2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Ambulance Services"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emg_hsptl_info" />
+
+    <Button
+        android:id="@+id/emg_hlth_ckup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:drawableRight="@drawable/ic_action_next"
+        android:includeFontPadding="true"
+        android:onClick="ShowPopup3"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Health Chackup At Home"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emg_ablnc_srvc" />
+
+</android.support.constraint.ConstraintLayout>

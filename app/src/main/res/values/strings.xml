@@ -8,6 +8,13 @@
     <string name="date">22 Oct 2015</string>
     <string name="selected_item">Selected item</string>
 
+
+    <string-array name="types">
+        <item>Medicine Product</item>
+        <item>Beauty Product</item>
+        <item>Baby Product</item>
+    </string-array>
+
     <string-array name="film_genre">
         <item>Baby Care</item>
         <item>Beauty Care</item>

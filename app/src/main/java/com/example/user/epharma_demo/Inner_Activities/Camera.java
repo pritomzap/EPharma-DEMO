@@ -1,12 +1,16 @@
 package com.example.user.epharma_demo.Inner_Activities;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.user.epharma_demo.MainActivity;
@@ -66,8 +70,7 @@ public class Camera extends AppCompatActivity {
 
                         //long callbackTime = System.currentTimeMillis();
                         bitmap = BitmapFactory.decodeByteArray(jpeg, 0, jpeg.length);
-                        File file = tempFileWrite(bitmap);
-                        apiCall(file);
+                        imageAlartBox(bitmap);
                     }
                 });
             }
@@ -146,6 +149,40 @@ public class Camera extends AppCompatActivity {
     protected void onPause() {
         cameraView.stop();
         super.onPause();
+    }
+
+    public void imageAlartBox(final Bitmap bitmap) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Camera.this);
+        LayoutInflater inflater = LayoutInflater.from(Camera.this);
+        final View dialogView = inflater.inflate(R.layout.camera_image_view, null);
+        builder.setCancelable(false);
+        builder.setView(dialogView);
+        Button cancel = (Button) dialogView.findViewById(R.id.cancel);
+        Button upload = (Button) dialogView.findViewById(R.id.upload);
+        ImageView imageView = (ImageView) dialogView.findViewById(R.id.cameraImage);
+        imageView.setImageBitmap(bitmap);
+        final AlertDialog dialog = builder.create();
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                File file = tempFileWrite(bitmap);
+                apiCall(file);
+                dialog.cancel();
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(1000, 900);
     }
 
 

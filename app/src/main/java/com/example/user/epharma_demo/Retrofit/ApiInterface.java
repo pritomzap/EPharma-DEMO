@@ -22,4 +22,10 @@ public interface ApiInterface {
     @GET("user_login.php")
     Call<Model> userLoginSystem(@Query("email") String email,
                                 @Query("password") String password);
+
+
+    @GET("user_registration.php")
+    Call<Model> userRegistration(@Query("username") String username,
+                                 @Query("email") String email,
+                                 @Query("password") String password);
 }

@@ -1,5 +1,7 @@
 package com.example.user.epharma_demo.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.user.epharma_demo.MainActivity;
 import com.example.user.epharma_demo.Others.SharedPref;
 import com.example.user.epharma_demo.R;
 import com.example.user.epharma_demo.Retrofit.APICall;
@@ -62,12 +65,13 @@ public class FragmentLogin extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_login, container, false);
+        final View v = inflater.inflate(R.layout.fragment_login, container, false);
         email = (EditText) v.findViewById(R.id.edittext1);
         password = (EditText) v.findViewById(R.id.edittext2);
         login = (Button) v.findViewById(R.id.button1);
         sharedPref = new SharedPref(v.getContext());
         apiCall = new APICall(v);
+        final Context c = v.getContext();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +80,8 @@ public class FragmentLogin extends Fragment {
                 String pass = password.getText().toString();
                 apiCall.userLogin(eMail, pass);
                 sharedPref.saveInfo(eMail, pass, "1");
+                Intent intent = new Intent(c, MainActivity.class);
+                startActivity(intent);
 
             }
         });

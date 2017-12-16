@@ -13,6 +13,7 @@ import com.example.user.epharma_demo.fragment.FragmentBabyCare;
 import com.example.user.epharma_demo.fragment.FragmentBeautyCare;
 import com.example.user.epharma_demo.fragment.FragmentBodyCare;
 import com.example.user.epharma_demo.fragment.FragmentDIabeticCare;
+import com.example.user.epharma_demo.fragment.FragmentEye_Ear;
 import com.example.user.epharma_demo.fragment.FragmentLogin;
 import com.example.user.epharma_demo.fragment.FragmentProfile;
 import com.example.user.epharma_demo.fragment.FragmentRegistration;
@@ -76,7 +77,7 @@ public class FragmentNavigationManager implements NavigationManager {
 
     @Override
     public void showFragmentEye(String title) {
-
+        showFragment(new FragmentEye_Ear(), false);
     }
 
     @Override
