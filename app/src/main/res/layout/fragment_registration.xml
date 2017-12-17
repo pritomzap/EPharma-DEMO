@@ -13,10 +13,9 @@
         android:layout_height="130dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -27,7 +26,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="36dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_user"
         android:drawableStart="@drawable/ic_action_user"
@@ -36,7 +35,6 @@
         android:inputType="textPersonName"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -46,7 +44,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_email"
         android:drawableStart="@drawable/ic_action_user"
@@ -55,7 +53,6 @@
         android:inputType="textPersonName"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext1" />
 
@@ -65,14 +62,13 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_pass"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext2" />
 
@@ -83,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button_bg_rounded_corners"
         android:includeFontPadding="true"
         android:paddingLeft="50dp"

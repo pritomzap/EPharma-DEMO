@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.user.epharma_demo.Inner_Activities.Camera;
 import com.example.user.epharma_demo.Inner_Activities.Emergency;
 import com.example.user.epharma_demo.Inner_Activities.Order_History;
+import com.example.user.epharma_demo.Inner_Activities.Refil_request;
 import com.example.user.epharma_demo.Inner_Activities.Request_Product;
 import com.example.user.epharma_demo.R;
 import com.example.user.epharma_demo.Retrofit.ApiClient;
@@ -51,7 +52,7 @@ public class Fragment_content extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ImageButton imageButton2, imageButton5, imageButton6, imageButton3, imageButton4, imageButton7;
+    private ImageButton imageButton, imageButton2, imageButton5, imageButton6, imageButton3, imageButton4, imageButton7;
     public Fragment_content() {
         // Required empty public constructor
     }
@@ -88,6 +89,7 @@ public class Fragment_content extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_content, container, false);
+        imageButton = (ImageButton) v.findViewById(R.id.imageButton);
         imageButton2 = (ImageButton) v.findViewById(R.id.imageButton2);
         imageButton5 = (ImageButton) v.findViewById(R.id.imageButton5);
         imageButton6 = (ImageButton) v.findViewById(R.id.imageButton6);
@@ -116,6 +118,17 @@ public class Fragment_content extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(v.getContext(), Order_History.class);
+                startActivity(intent);
+            }
+        });
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Intent intent = new Intent(v.getContext(), Refil_Request.class);
+                startActivity(intent);*/
+                //Toasty.success(v.getContext(),"BAL CHALLLLL",Toast.LENGTH_LONG,true).show();
+                Intent intent = new Intent(v.getContext(), Refil_request.class);
                 startActivity(intent);
             }
         });
